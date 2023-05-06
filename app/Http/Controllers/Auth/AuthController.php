@@ -26,7 +26,7 @@ class AuthController extends Controller
         ]);
 
         if (! $token = Auth::attempt($credentials)) {
-            return response()->json(['message' => 'User not found'], 401);
+            return response()->json(['message' => 'Credentials Invalid'], 401);
         }
         
         return $this->respondWithToken($token);
